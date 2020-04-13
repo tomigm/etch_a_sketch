@@ -1,0 +1,218 @@
+/*http://bluecaret.com/blog/responsive-grid-of-squares*/
+
+
+body {
+    animation: fadeIn 3s;
+}
+  
+@keyframes fadeIn { 
+    from { 
+        opacity: 0; 
+        background-color: rgb(216, 192, 253);
+    } 
+    to { 
+        opacity: 1; 
+     } 
+} 
+
+body {
+    margin: auto;
+    height: 70%;
+    width: 70%;
+   
+}
+
+.grid {
+    margin: auto;
+    width: 50%;
+    overflow: hidden;
+    
+}
+.row {
+    display: flex;
+}
+.box {
+    flex: 1;
+    height: 100%;
+   
+    background: rgb(255, 255, 255);
+    border: 0.01mm solid rgb(233, 232, 232);
+    margin: 0px;
+    color: white;
+    
+    
+    /*position: relative;*/
+}
+
+.box:after {
+    content: "";
+    float:left;
+    display: block;
+    padding-top: 100%;
+}
+
+
+
+.colorBox {
+    flex: 1;
+    border: 1px solid rgb(212, 212, 212);
+    content: 'Select Color';
+    cursor: pointer;
+    transition: 1s;
+    
+}
+
+.colorBox:hover::before {
+    background-color: unset;
+}
+
+#colorMode {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+#paintMode {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.PMbtn {
+    flex:1;
+    justify-content: space-between
+    
+}
+
+.CMbtn {
+    flex:1;
+    justify-content: space-around;
+}
+.CMbtn, .PMbtn{
+    width: 100px;
+    border: none;
+    outline: none;
+    background-color:  rgb(233, 232, 232);;
+    padding: 20px 10px;
+    transition: all 1s ease-out;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+.newGrid {
+    display: flex;
+    margin: auto;
+    width: 50%;
+}
+.newGrid {
+    
+    
+    flex:1;
+    justify-content: center;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    background-color:  rgb(233, 232, 232);;
+    color: rgb(75, 75, 75);
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 10px;
+    font-size: 25px;
+    transition: all 0.5s ease-out;
+}
+.active, .CMbtn:hover{
+    background-color: rgb(241, 173, 173);
+
+}
+
+
+
+.active2, .PMbtn:hover{
+    background-color: rgb(180, 241, 226);
+
+}
+
+.newGrid:hover {
+    background-color: rgb(48, 48, 48);
+    color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 700px) {
+    
+    .grid {
+        margin: auto;
+        width: 100%;
+        overflow: hidden;
+        
+    }
+
+    .colorBox {
+        flex-direction: column;
+        border: 1px solid rgb(212, 212, 212);
+        content: 'Select Color';
+        cursor: pointer;
+        transition: 1s;
+        width: 100%;
+        height: 50px;
+        
+    }
+    
+    #colorMode {
+        flex-direction: column;
+        
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    #paintMode {
+        
+        
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .PMbtn {
+        flex:1;
+        justify-content: space-between
+        
+    }
+    
+    .CMbtn {
+        flex:1;
+        justify-content: space-around;
+    }
+    .CMbtn, .PMbtn{
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color:  rgb(233, 232, 232);;
+        padding: 15px 5px;
+        transition: all 1s ease-out;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+    }
+    .newGrid {
+        display: flex;
+        
+        width: 100%;
+    }
+    .newGrid {
+        
+        
+        flex:1;
+        justify-content: center;
+        margin-top: 5px;
+        border: none;
+        outline: none;
+        background-color:  rgb(233, 232, 232);;
+        color: rgb(75, 75, 75);
+        font-weight: 900;
+        font-family: 'Montserrat', sans-serif;
+        padding: 20px 10px;
+        font-size: 25px;
+        transition: all 0.5s ease-out;
+    }
+}
